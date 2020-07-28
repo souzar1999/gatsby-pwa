@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import media from "styled-media-query"
-import { Link } from "gatsby"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 export const SocialLinksWrapper = styled.nav`
   margin: 2rem auto;
@@ -18,7 +18,7 @@ export const SocialLinksList = styled.ul`
 `
 export const SocialLinksItem = styled.li``
 
-export const SocialLinksLink = styled(Link)`
+export const SocialLinksLink = styled(AniLink)`
   color: var(--texts);
   text-decoration: none;
   transition: color 0.5s;
