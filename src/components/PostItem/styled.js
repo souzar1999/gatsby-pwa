@@ -6,7 +6,7 @@ export const PostItemLink = styled(Link)`
   display: flex;
   text-decoration: none;
   &:hover {
-    color: #1fa1f2;
+    color: var(--highlight);
   }
 
   body#grid & {
@@ -31,7 +31,8 @@ export const PostItemWrapper = styled.section`
 
 export const PostItemTag = styled.div`
   align-items: center;
-  background: ${props => (props.background ? props.background : "#1fa1f2")};
+  background: ${props =>
+    props.background ? props.background : "var(--highlight)"};
   border-radius: 50%;
   color: var(--postColor);
   display: flex;

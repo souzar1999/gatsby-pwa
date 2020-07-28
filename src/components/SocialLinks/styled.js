@@ -1,9 +1,14 @@
 import styled from "styled-components"
+import media from "styled-media-query"
 import { Link } from "gatsby"
 
 export const SocialLinksWrapper = styled.nav`
   margin: 2rem auto;
   width: 100%;
+
+  ${media.lessThan("large")`
+    display: none;
+  `}
 `
 export const SocialLinksList = styled.ul`
   align-items: center;
@@ -18,7 +23,7 @@ export const SocialLinksLink = styled(Link)`
   text-decoration: none;
   transition: color 0.5s;
   &:hover {
-    color: #1fa1f2;
+    color: var(--highlight);
   }
 `
 

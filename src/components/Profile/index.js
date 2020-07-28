@@ -23,10 +23,12 @@ const Profile = () => {
 
   return (
     <S.ProfileWrapper className="profile-wrapper">
-      <S.ProfileLink>
+      <S.ProfileLink to="/" cover direction="left" duration={0.6}>
         <Avatar />
-        <S.ProfileAuthor>{title}</S.ProfileAuthor>
-        <S.ProfilePosition>{position}</S.ProfilePosition>
+        <S.ProfileAuthor>
+          {title}
+          <S.ProfilePosition>{position}</S.ProfilePosition>
+        </S.ProfileAuthor>
       </S.ProfileLink>
       <S.ProfileDescription>{description}</S.ProfileDescription>
     </S.ProfileWrapper>
