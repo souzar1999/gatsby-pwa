@@ -39,22 +39,23 @@ exports.createPages = ({ graphql, actions }) => {
               date(locale: "pt-br", formatString: "DD [de] MMMM [de] YYYY")
               description
               title
+              image
             }
             timeToRead
           }
-          next{
-            frontmatter{
+          next {
+            frontmatter {
               title
             }
-            fields{
+            fields {
               slug
             }
           }
-          previous{
-            frontmatter{
+          previous {
+            frontmatter {
               title
             }
-            fields{
+            fields {
               slug
             }
           }
@@ -71,7 +72,7 @@ exports.createPages = ({ graphql, actions }) => {
         context: {
           slug: node.fields.slug,
           previousPost: next,
-          nextPost: previous
+          nextPost: previous,
         },
       })
     })
@@ -79,16 +80,16 @@ exports.createPages = ({ graphql, actions }) => {
     const postsPerPage = 6
     const numPages = Math.ceil(posts.length / 6)
 
-    Array.from({length: numPages}).forEach((_, index) => {
+    Array.from({ length: numPages }).forEach((_, index) => {
       createPage({
-        path:index === 0 ? `/`: `/page/${index + 1}`,
+        path: index === 0 ? `/` : `/page/${index + 1}`,
         component: path.resolve(`./src/templates/blog-list.js`),
         context: {
           limit: postsPerPage,
           skip: index * postsPerPage,
           numPages,
-          currentPage: index + 1
-        }
+          currentPage: index + 1,
+        },
       })
     })
   })
